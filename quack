@@ -1,0 +1,17 @@
+#!/bin/bash
+# written by Paulo Cereda
+# Epic tool is epic :)
+QUACKEDITOR=gedit
+if [ $# -eq 0 ]
+then
+echo "quack 1.0 - David's favourite tool"
+echo
+echo usage: quack filename [ filename filename ... ]
+echo
+else
+for entry in $(kpsewhich --all $@)
+do
+$QUACKEDITOR "$entry"
+done
+fi
+
